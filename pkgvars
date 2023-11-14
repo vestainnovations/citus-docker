@@ -1,3 +1,4 @@
-postgres_15_version=15.2
-postgres_14_version=14.7
-postgres_13_version=13.10
+postgres_16_version=16.1
+postgres_15_version=15.5
+postgres_14_version=14.10
+

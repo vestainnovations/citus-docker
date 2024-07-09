@@ -1,6 +1,8 @@
+FROM ghcr.io/cloudnative-pg/postgresql:16-bookworm
+USER 0
+
 # This file is auto generated from it's template,
 # see citusdata/tools/packaging_automation/templates/docker/latest/latest.tmpl.dockerfile.
-FROM postgres:16.3
 ARG VERSION=12.1.4
 LABEL maintainer="Citus Data https://citusdata.com" \
       org.label-schema.name="Citus" \
@@ -40,3 +42,5 @@ RUN chmod +x /wait-for-manager.sh
 RUN sed "/unset PGPASSWORD/d" -i /usr/local/bin/docker-entrypoint.sh
 
 HEALTHCHECK --interval=4s --start-period=6s CMD ./pg_healthcheck
+
+USER 26
